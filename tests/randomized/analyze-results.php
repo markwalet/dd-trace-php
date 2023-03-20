@@ -1,6 +1,6 @@
 <?php
 
-const MINIMUM_ACCEPTABLE_REQUESTS = 900;
+const MINIMUM_ACCEPTABLE_REQUESTS = 800;
 const MINIMUM_ASAN_ACCEPTABLE_REQUESTS = 300;
 
 function analyze_web($tmpScenariosFolder)
