@@ -74,7 +74,9 @@ ${PHP_SRC_DIR}/configure \
     --with-config-file-path=${INSTALL_DIR} \
     --with-config-file-scan-dir=${INSTALL_DIR}/conf.d
 
-if ! make -j "$((`nproc`+1))" && [[ ${INSTALL_VERSION} == *asan* ]]; then
+make -j "$((`nproc`+1))" || true
+
+if [[ ${INSTALL_VERSION} == *asan* ]]; then
   # ensure compilation finishes, then back up php
   make || true;
   exit;
